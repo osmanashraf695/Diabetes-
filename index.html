@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Link to JavaScript -->
+    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction</h1>
+        <img src="{{ url_for('static', filename='images/diabetes_image.png') }}" alt="Diabetes Awareness"
+            style="max-width: 100%; height: auto;">
+
+        <form id="prediction-form" onsubmit="predictDiabetes(event);">
+            <div class="input-group">
+                <label for="pregnancies">Pregnancies:</label>
+                <input type="number" id="pregnancies" required>
+            </div>
+
+            <div class="input-group">
+                <label for="glucose">Glucose Level:</label>
+                <input type="number" id="glucose" required>
+            </div>
+
+            <div class="input-group">
+                <label for="bloodPressure">Blood Pressure:</label>
+                <input type="number" id="bloodPressure" required>
+            </div>
+
+            <div class="input-group">
+                <label for="skinThickness">Skin Thickness:</label>
+                <input type="number" id="skinThickness" required>
+            </div>
+
+            <div class="input-group">
+                <label for="insulin">Insulin:</label>
+                <input type="number" id="insulin" required>
+            </div>
+
+            <div class="input-group">
+                <label for="bmi">BMI:</label>
+                <input type="number" step="0.01" id="bmi" required>
+            </div>
+
+            <div class="input-group">
+                <label for="diabetesPedigreeFunction">Diabetes Pedigree Function:</label>
+                <input type="number" step="0.01" id="diabetesPedigreeFunction" required>
+            </div>
+
+            <div class="input-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" required>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+</body>
+
+</html>
